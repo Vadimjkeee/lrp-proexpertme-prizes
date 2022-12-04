@@ -1,30 +1,41 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="app">
+    <section-large-banner/>
+    <section-step-banner/>
+    <!-- <popup-prizes v-if="popup-prizes.status" /> -->
+    <!-- <popup-prizes/> -->
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script> 
+  import SectionLargeBanner from "@/components/SectionLargeBanner";
+  import SectionStepBanner from "@/components/SectionStepBanner";
+  import PopupPrizes from "@/components/PopupPrizes";
+export default {
+    components: {
+      SectionLargeBanner, SectionStepBanner, PopupPrizes
+    },
+  data() {
+    
+  },
+};
+</script>
+
+<style lang="scss">
+@import './assets/scss/index.scss'; 
+
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+section{
+  background-color: #E7F5FF;
 }
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+.btn {
+    border-radius: 80px;
+    background: #00bfff;
+    @include adaptiv-font(24, 18);
+  }
 </style>
